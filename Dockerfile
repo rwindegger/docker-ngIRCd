@@ -48,8 +48,6 @@ WORKDIR /opt/scripts/
 EXPOSE 6667 6668 6669
 VOLUME /opt/ngircd/etc/conf.d
 
-COPY conf.d /opt/ngircd/etc/conf.d/
-
 ENV DOCKER_HOST=unix:///tmp/docker.sock
 
 ENTRYPOINT ["/opt/scripts/docker-entrypoint.sh"]
