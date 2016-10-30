@@ -1,1 +1,2 @@
+ngircd: /opt/ngircd/sbin/ngircd -n
 dockergen: docker-gen -watch -notify "/opt/scripts/ngircd_reload.sh" /opt/scripts/ngircd.tmpl /opt/ngircd/etc/ngircd.conf
