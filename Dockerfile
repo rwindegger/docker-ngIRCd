@@ -37,7 +37,7 @@ RUN mkdir ~/src -p \
  && git clone git://ngircd.barton.de/ngircd.git \
  && cd ngircd \
  && ./autogen.sh \
- && ./configure --prefix=/opt/ngircd \
+ && ./configure --prefix=/opt/ngircd --with-ident --with-tcp-wrappers --with-gnutls --enable-ipv6 \
  && make \
  && make install
 
@@ -47,6 +47,8 @@ WORKDIR /opt/scripts/
 
 EXPOSE 6667 6668 6669
 VOLUME /opt/ngircd/etc/conf.d
+
+COPY conf.d /opt/ngircd/etc/conf.d/
 
 ENV DOCKER_HOST=unix:///tmp/docker.sock
 
